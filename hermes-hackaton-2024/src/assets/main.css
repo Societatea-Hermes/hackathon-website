@@ -1,0 +1,22 @@
+:root {
+  --purple: #6822e5;
+  --magenta: #cf29c7;
+  --dark-blue: #2e8ef2;
+  --mid-blue: #6c86e7;
+  --light-blue: #62a1f0;
+  --green: #31af33;
+}
+
+body {
+  background: linear-gradient(
+    to bottom right,
+    var(--magenta),
+    var(--purple),
+    var(--dark-blue),
+    var(--mid-blue),
+    var(--light-blue),
+    var(--green)
+  );
+  height: 100vh; /* Ensure it covers the full viewport height */
+  margin: 0; /* Remove default margin */
+}
