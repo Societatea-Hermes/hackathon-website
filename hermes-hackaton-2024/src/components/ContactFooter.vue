@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="contact">
+        <div id="contact">
             <div>
                 Social links:
                 <ul>
@@ -54,7 +54,7 @@ Strada Bogdan Petriceicu Hașdeu 45, Cluj-Napoca
 </script>
   
 <style scoped>
-    .contact {
+    #contact {
         display: grid;
         grid-template-columns: 25% 40% 25%;
         margin-left: 5%;
@@ -63,36 +63,38 @@ Strada Bogdan Petriceicu Hașdeu 45, Cluj-Napoca
         text-align: center;
         color: white;
     }
-    .contact ul {
+    #contact ul {
         padding-left: 0;
     }
-    .contact li {
+    #contact li {
         list-style-type: none;
         display: inline;
         padding-left: 5px;
         padding-right: 5px;
     }
-    .contact a:link {
+    #contact a:link {
         color: white;
     }
-    .contact a:visited {
+    #contact a:visited {
         color: white;
     }
-    .contact a:hover {
+    #contact a:hover {
         color: var(--purple);
     }
-    .contact div {
+    #contact div {
         margin: 1rem;
     }
-    .contact address {
+    #contact address {
         white-space: pre-wrap;
     }
     .copyright {
         text-align: center;
         color: white;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
     @media only screen and (max-width: 600px) {
-        .contact {
+        #contact {
             grid-template-columns: 90%;
         }
     }

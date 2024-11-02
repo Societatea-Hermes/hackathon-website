@@ -1,6 +1,6 @@
-import axios from 'axios'
+// import axios from 'axios'
 
-export default async function () {
+export default function () {
   const sponsors = [
     {
       name: 'Sponsor 1',
@@ -16,7 +16,7 @@ export default async function () {
     },
   ]
 
-  // const sponsors = await axios.get('https://api.sponsors.com')
+  // const sponsors = await axios.get('https://apis.societatea-hermes.ro/v1/sponsors')
 
   return {
     sponsors,
