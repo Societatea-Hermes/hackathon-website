@@ -1,6 +1,13 @@
 <template>
-  <nav>
-    <ul class="navbar">
+  <nav class="navbar">
+    <div class="logo-cont">
+      <img
+        class="logo-img"
+        src="../assets/imgs/hackathon-logo.svg"
+        alt="Hackaton logo"
+      />
+    </div>
+    <div class="navbar-btns-cont">
       <div class="nav-link-container">
         <RouterLink class="nav-link" to="/about">About</RouterLink>
       </div>
@@ -13,7 +20,7 @@
       <div class="nav-link-container">
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-    </ul>
+    </div>
   </nav>
 </template>
 
@@ -25,42 +32,56 @@ import { RouterLink } from 'vue-router'
 nav {
   background-color: #333;
   color: white;
-  padding: 1rem;
-}
-
-ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
 }
 
 .navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-cont {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 1;
+  max-height: 70px;
+}
+
+.logo-img {
+  height: 300%;
+  width: auto;
+}
+
+.navbar-btns-cont {
   display: flex;
   justify-content: space-around;
-  list-style: none;
+  text-align: center;
 }
 
 .nav-link {
   color: black;
   font-weight: bold;
-  font-size: xx-large;
+  font-size: medium;
   align-self: center;
-  margin-bottom: 30px;
 }
 
 .nav-link-container {
-  width: 300px;
-  height: 200px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 130px;
+  height: 70px;
   justify-content: center;
-  display: flex;
-  background: url('../assets/imgs/nav-unpressed.svg') center no-repeat;
+  background: url('../assets/imgs/nav-unpressed.svg') no-repeat;
+  background-size: contain;
 }
 
 .nav-link-container:hover {
   background: url('../assets/imgs/nav-pressed.svg') center no-repeat;
+  background-size: contain;
 }
-
 .nav-link-container:active {
   background: url('../assets/imgs/nav-pressed.svg') center no-repeat;
+  background-size: contain;
 }
 </style>
