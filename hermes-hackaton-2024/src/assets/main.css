@@ -1,3 +1,8 @@
+@font-face {
+  font-family: ArcadeClassic;
+  src: url('../assets/fonts/arcadeclassic.ttf');
+}
+
 :root {
   --purple: #6822e5;
   --magenta: #cf29c7;
@@ -5,6 +10,7 @@
   --mid-blue: #6c86e7;
   --light-blue: #62a1f0;
   --green: #31af33;
+  font-family: 'ArcadeClassic', sans-serif;
 }
 
 body {
@@ -17,6 +23,6 @@ body {
     var(--light-blue),
     var(--green)
   );
-  height: 100vh; /* Ensure it covers the full viewport height */
+  background: url('../assets/imgs/background.jpg') no-repeat center fixed;
   margin: 0; /* Remove default margin */
 }
