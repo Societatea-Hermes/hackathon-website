@@ -7,7 +7,7 @@ on:
     branches:
       - main
 env:
-  IMAGE_NAME: template
+  IMAGE_NAME: hermes-hackathon-2024
 
 jobs:
   push:

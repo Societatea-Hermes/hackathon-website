@@ -1,2 +1,4 @@
-Collaborators Finaga Iulia
-
+Contributors:
+- Finaga Iulia
+- Silvasan Alexandra
+- Magdici Giorgia
