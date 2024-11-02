@@ -1,6 +1,6 @@
 @font-face {
-  font-family: ArcadeClassic;
-  src: url('../assets/fonts/arcadeclassic.ttf');
+  font-family: joystix;
+  src: url('../assets/fonts/joystix.otf');
 }
 
 :root {
@@ -10,7 +10,7 @@
   --mid-blue: #6c86e7;
   --light-blue: #62a1f0;
   --green: #31af33;
-  font-family: 'ArcadeClassic', sans-serif;
+  font-family: 'joystix', sans-serif;
 }
 
 body {
