@@ -24,5 +24,5 @@ body {
     var(--green)
   );
   background: url('../assets/imgs/background.jpg') no-repeat center fixed;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
