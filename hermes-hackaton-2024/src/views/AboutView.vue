@@ -1,79 +1,67 @@
 <template>
   <HackathonTitle />
-  <div>
-    <h2>Timeline</h2>
+  <div class="timeline-container">
+    <h2 class="about-section-header">Timeline</h2>
     <div class="timeline">
-      <div
-        class="timeline-item"
-        v-for="(event, index) in timeline"
-        :key="index"
-      >
-        <div class="date">{{ event.date }}</div>
-        <div class="time">{{ event.time }}</div>
-        <div class="activity">{{ event.description }}</div>
+      <div v-for="day in timeline" :key="day.day">
+        <div class="day">{{ day.day }}</div>
+        <div
+          class="timeline-item"
+          v-for="(event, index) in day.timeline"
+          :key="index"
+          :class="{
+            current: isCurrentActivity(
+              day.date,
+              event,
+              day.timeline[index + 1],
+            ),
+          }"
+        >
+          <div class="time">{{ event.time }}</div>
+          <div class="activity">{{ event.description }}</div>
+        </div>
       </div>
     </div>
-    <h2>Guests</h2>
-    <GuestArcade />
+    <div class="guests-container">
+      <h2 class="about-section-header">Guests</h2>
+    </div>
   </div>
 </template>
 
 <script setup>
-import GuestArcade from '../components/GuestArcade.vue'
+import { getBackground } from '@/composables/useBackground'
 import HackathonTitle from '../components/HackathonTitle.vue'
-</script>
+import { ref } from 'vue'
+import useTimeline from '@/composables/useTimeline'
 
-<script>
-export default {
-  data() {
-    return {
-      eventTitle1: 'Arcade Guardians:',
-      eventTitle2: 'Retro Games Meet Cybersecurity',
-      eventMotto: 'Hacking the past to secure the future',
-      timeline: [
-        { date: 'Day 1', time: '09:00', description: 'Welcome' },
-        { date: '', time: '10:00', description: 'Presentation' },
-        { date: '', time: '11:30', description: 'Brainstorming' },
-        { date: '', time: '12:00', description: 'CODING' },
-        { date: '', time: '14:00', description: 'Lunch' },
-        { date: '', time: '16:00', description: 'Mentoring' },
-        { date: '', time: '19:00', description: 'Private Mentoring' },
-        { date: '', time: '21:00', description: 'Dinner' },
-        { date: '', time: '00:00', description: 'Activities' },
-        { date: 'Day 2', time: '08:00', description: 'Energizer' },
-        { date: '', time: '09:00', description: 'Breakfast' },
-        { date: '', time: '11:00', description: 'Mentoring' },
-        { date: '', time: '14:00', description: 'STOP CODE' },
-        { date: '', time: '14:00', description: 'Lunch Break' },
-        { date: '', time: '15:00', description: 'Demo' },
-        { date: '', time: '15:30', description: 'Presentations' },
-        { date: '', time: '17:30', description: 'Awards' },
-      ],
-      guests: [
-        { name: 'giuco', role: 'juriu' },
-        { name: 'bradu', role: 'mentor' },
-        { name: 'teo', role: 'mama la copii' },
-      ],
-    }
-  },
+const backgroundImage = getBackground()
+
+const { timelineArr } = useTimeline()
+const timeline = ref(timelineArr)
+
+const isCurrentActivity = (date, event, nextEvent) => {
+  const now = new Date()
+  const eventStart = new Date(`${date}T${event.time}`)
+  const eventEnd = nextEvent
+    ? new Date(`${date}T${nextEvent.time}`)
+    : new Date(eventStart.getTime() + 60 * 60000)
+  return now >= eventStart && now < eventEnd
 }
 </script>
 
 <style scoped>
-body {
+.timeline-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #000;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  background-image: v-bind('backgroundImage');
+  background-size: 100% 100%;
+  background-repeat: repeat-y;
   color: white;
-  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .motto {
@@ -84,12 +72,9 @@ h1 {
   text-align: right;
 }
 
-h2 {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-  margin-left: 1rem;
+.about-section-header {
   font-size: 1.5em;
-  color: #62a1f0;
+  color: var(--light-blue);
   text-align: left;
 }
 
@@ -115,25 +100,80 @@ h2 {
 
 .timeline {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   column-gap: 10rem;
   row-gap: 1.5rem;
-  color: #62a1f0;
+  color: var(--light-blue);
   max-width: 800px;
   width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px 10px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.day {
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(to bottom, #6822e5 0%, #62a1f0 60%, #cf29c7 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
 }
 
 .timeline-item {
-  display: contents;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.date {
-  font-weight: bold;
-  text-align: center;
+.timeline-item.current .activity {
+  color: green;
 }
 
 .time {
   font-weight: bold;
-  text-align: center;
+  white-space: nowrap;
+}
+
+.activity {
+  color: var(--magenta);
+  word-break: break-word;
+}
+
+.guests-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 930px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
 }
 </style>

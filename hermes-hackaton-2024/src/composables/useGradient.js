@@ -15,7 +15,7 @@ export const getGradient = () => {
     page => {
       page_gradient.value = `linear-gradient(to bottom, ${color_set[page][0]} 0%, ${color_set[page][1]} 40%, ${color_set[page][2]} 100%)`
     },
-    { immediate: true }
+    { immediate: true },
   )
   return page_gradient
 }

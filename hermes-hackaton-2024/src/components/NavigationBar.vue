@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar" :class="{ visible: visible }">
-    <div class="logo-cont" :class="{ visible: visible }">
-      <RouterLink to="/" class="logo-link"
-        ><img
+  <nav class="navbar">
+    <div class="logo-cont">
+      <RouterLink to="/" class="logo-link">
+        <img
           class="logo-img"
           src="../assets/imgs/hackathon-logo.svg"
           alt="Hackaton logo"
@@ -31,13 +31,18 @@
 </template>
 
 <script setup>
+import { ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { getGradient } from '@/composables/useGradient'
 import { useScrollTo } from '@/composables/useScrollTo'
-import { ref } from 'vue'
+import { updateCssVariable } from '@/utils'
 
 const { scrollTo } = useScrollTo('/', '#sponsors')
 const page_gradient = getGradient()
+
+watch(page_gradient, () => {
+  updateCssVariable('scrollbar-gradient', page_gradient.value)
+})
 
 const visible = ref(true)
 </script>
@@ -80,6 +85,12 @@ const visible = ref(true)
   text-align: center;
 }
 
+.navbar-btns-cont.visible {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .nav-link {
   margin-inline: 15px;
   width: 130px;
@@ -115,30 +126,22 @@ const visible = ref(true)
     align-items: center;
     padding-bottom: 0;
   }
-  .navbar:not(.visible) {
-    height: auto;
-    background: transparent;
-    position: fixed;
+  .nav-link {
+    margin-inline: 15px;
   }
 
   .navbar-btns-cont {
-    margin-top: 20px;
-  }
-  .navbar-btns-cont:not(.visible),
-  .logo-cont:not(.visible) {
+    margin-top: 30px;
     display: none;
   }
-
+  .navbar-btns-cont.visible {
+    margin-top: 30px;
+    display: flex;
+  }
   .toggle {
-    width: 100%;
+    margin-top: 30px;
     display: block;
     font-size: 1.5rem;
-  }
-
-  .toggle div {
-    margin: 0;
-    max-width: fit-content;
-    margin-inline: auto;
     cursor: pointer;
   }
 }
@@ -146,9 +149,12 @@ const visible = ref(true)
 @media only screen and (max-width: 650px) {
   .nav-link {
     width: 80px;
-    height: 40px;
+    height: 30px;
     font-size: 0.6rem;
     margin-inline: 5px;
+  }
+  .nav-link-active {
+    height: 30px;
   }
   .nav-link:hover {
     height: 30px;
@@ -161,6 +167,12 @@ const visible = ref(true)
     height: 300%;
     width: auto;
     margin-top: -40px;
+  }
+  .navbar-btns-cont.visible {
+    margin-top: 10px;
+  }
+  .toggle {
+    margin-top: 10px;
   }
 }
 </style>

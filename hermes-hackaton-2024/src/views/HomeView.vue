@@ -39,14 +39,14 @@ body {
 
 .custom-background {
   background-image: url('/imgs/background.jpg');
-  background-size: 100% 100%; /* Ensures width fits */
-  background-repeat: repeat-y; /* Repeat vertically */
-  background-position: top; /* Align at the top */
-  flex-grow: 1; /* Allow it to grow and fill space */
-  display: flex; /* Enable flexbox for the background */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  background-size: 100% 100%;
+  background-repeat: repeat-y;
+  background-position: top;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .centered-text-home {
