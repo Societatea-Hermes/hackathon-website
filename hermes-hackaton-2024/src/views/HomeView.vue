@@ -1,17 +1,29 @@
-
 <template>
   <HackathonTitle />
   <div class="custom-background">
     <div>
       <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
       </p>
     </div>
+    <section id="#sponsors">
+      <ul>
+        <li>S1</li>
+        <li>S2</li>
+        <li>S3</li>
+      </ul>
+    </section>
   </div>
 </template>
 
 <script setup>
-import HackathonTitle from '../components/HackathonTitle.vue';
+import HackathonTitle from '../components/HackathonTitle.vue'
 </script>
 
 <style scoped>
@@ -24,7 +36,7 @@ body {
 }
 
 .custom-background {
-  background-image: url('/imgs/background.jpg'); 
+  background-image: url('/imgs/background.jpg');
   background-size: 100% 100%; /* Ensures width fits */
   background-repeat: repeat-y; /* Repeat vertically */
   background-position: top; /* Align at the top */
@@ -41,7 +53,7 @@ body {
 }
 
 .gradient-text-blue {
-  background: linear-gradient(to bottom, #6822E5 0%, #62A1F0 60%, #CF29C7 100%);
+  background: linear-gradient(to bottom, #6822e5 0%, #62a1f0 60%, #cf29c7 100%);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -49,13 +61,13 @@ body {
 .subtext {
   text-align: center;
   font-size: 20px;
-  color: #62A1F0;
+  color: #62a1f0;
   margin-top: 100px;
 }
 
 .description-text {
   font-size: 20px;
-  color: #62A1F0;
+  color: #62a1f0;
   margin-top: 400px;
   margin-left: 20%;
   margin-right: 20%;
@@ -71,7 +83,7 @@ body {
 
 .sponsor-text {
   font-size: 20px;
-  background: linear-gradient(to bottom, #6822E5 0%, #62A1F0 60%, #CF29C7 100%);
+  background: linear-gradient(to bottom, #6822e5 0%, #62a1f0 60%, #cf29c7 100%);
   -webkit-background-clip: text;
   color: transparent;
   margin-right: 10px;

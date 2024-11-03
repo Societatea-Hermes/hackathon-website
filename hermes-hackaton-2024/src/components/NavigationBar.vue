@@ -1,50 +1,42 @@
 <template>
-  <nav class="navbar" :class="{visible: visible}">
-    <div class="logo-cont" :class="{visible: visible}">
-      <RouterLink to="/" class="logo-link"><img
-        class="logo-img"
-        src="../assets/imgs/hackathon-logo.svg"
-        alt="Hackaton logo"
-      />
+  <nav class="navbar" :class="{ visible: visible }">
+    <div class="logo-cont" :class="{ visible: visible }">
+      <RouterLink to="/" class="logo-link"
+        ><img
+          class="logo-img"
+          src="../assets/imgs/hackathon-logo.svg"
+          alt="Hackaton logo"
+        />
       </RouterLink>
     </div>
-    <div class="navbar-btns-cont" :class="{visible: visible}">
-        <RouterLink class="nav-link" to="/about">About</RouterLink>
-        <RouterLink class="nav-link" to="/register">Register</RouterLink>
-        <RouterLink class="nav-link" to="#sponsors">Sponsors</RouterLink>
-        <RouterLink class="nav-link" to="#contact">Contact</RouterLink>
+    <div class="navbar-btns-cont" :class="{ visible: visible }">
+      <RouterLink active-class="nav-link-active" class="nav-link" to="/about"
+        >About</RouterLink
+      >
+      <RouterLink active-class="nav-link-active" class="nav-link" to="/register"
+        >Register</RouterLink
+      >
+      <a class="nav-link" @click="scrollTo">Sponsors</a>
+      <RouterLink class="nav-link" to="#contact">Contact</RouterLink>
     </div>
     <div @click="visible = !visible" class="toggle">
-          <div v-if="visible">
-            <span class="fa-solid fa-arrow-up"></span>
-          </div>
-          <div v-else>
-            <span class="fa-solid fa-bars"></span>
-          </div>
+      <div v-if="visible">
+        <span class="fa-solid fa-arrow-up"></span>
+      </div>
+      <div v-else>
+        <span class="fa-solid fa-bars"></span>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { RouterLink, useRoute } from 'vue-router'
-import { ref, watch  } from 'vue'
+import { RouterLink } from 'vue-router'
+import { useGradient } from '@/composables/useGradient'
+import { useScrollTo } from '@/composables/useScrollTo'
 
-const color_set = {
-  '/about': ['#6c86e7', '#cf29c7', '#62a1ef'],
-  '/register': ['#6822E5', '#62A1F0', '#31AF34'],
-  '/': ['#6822E5', '#62A1F0', '#CF29C7']
-}
-
-const visible = ref(true)
-const route = useRoute()
-const backgroundColor = ref(
-  `linear-gradient(to bottom, ${color_set['/'][0]} 0%, ${color_set['/'][1]} 40%, ${color_set['/'][2]} 100%)`
-)
-
-watch(() => route.path, page => {
-  backgroundColor.value = `linear-gradient(to bottom, ${color_set[page][0]} 0%, ${color_set[page][1]} 40%, ${color_set[page][2]} 100%)`;
-})
-
+useGradient()
+const { scrollTo } = useScrollTo('/', '#sponsors')
 </script>
 
 <style scoped>
@@ -52,7 +44,10 @@ watch(() => route.path, page => {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  background: v-bind('backgroundColor');
+  background: var(--navbar-gradient);
+  /* position: sticky;
+  top: 0;
+  z-index: 1000; */
 }
 
 .toggle {
@@ -94,6 +89,8 @@ watch(() => route.path, page => {
   background: url('../assets/imgs/nav-unpressed.svg') no-repeat;
   background-size: contain;
   background-position: bottom;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-link:hover {
@@ -104,7 +101,7 @@ watch(() => route.path, page => {
   height: 50px;
 }
 
-.nav-link:active {
+.nav-link-active {
   background: url('../assets/imgs/nav-pressed.svg') center no-repeat;
   background-size: contain;
   background-position: bottom;
@@ -124,10 +121,11 @@ watch(() => route.path, page => {
     position: fixed;
   }
 
-  .navbar-btns-cont{
+  .navbar-btns-cont {
     margin-top: 20px;
   }
-  .navbar-btns-cont:not(.visible), .logo-cont:not(.visible){
+  .navbar-btns-cont:not(.visible),
+  .logo-cont:not(.visible) {
     display: none;
   }
 
@@ -137,7 +135,7 @@ watch(() => route.path, page => {
     font-size: 1.5rem;
   }
 
-  .toggle div{
+  .toggle div {
     margin: 0;
     max-width: fit-content;
     margin-inline: auto;
@@ -164,7 +162,5 @@ watch(() => route.path, page => {
     width: auto;
     margin-top: -40px;
   }
-
 }
 </style>
-

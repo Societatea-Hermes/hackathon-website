@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-import GuestArcade from '../components/GuestArcade.vue';
-import HackathonTitle from '../components/HackathonTitle.vue';
+import GuestArcade from '../components/GuestArcade.vue'
+import HackathonTitle from '../components/HackathonTitle.vue'
 </script>
 
 <script>
@@ -31,15 +31,23 @@ export default {
       eventTitle2: 'Retro Games Meet Cybersecurity',
       eventMotto: 'Hacking the past to secure the future',
       timeline: [
-        { date: 'Day 1', time: '09:00 AM', description: 'Deschidere' },
-        { date: '', time: '10:30 AM', description: 'mentorat' },
-        { date: '', time: '01:00 PM', description: 'prezentare' },
-        { date: '', time: '03:00 PM', description: 'papa whatever' },
-        { date: 'Day 2', time: '09:00 AM', description: 'Activitate 1' },
-        { date: '', time: '10:30 AM', description: 'Activitate 2' },
-        { date: '', time: '01:00 PM', description: 'Activitate 3' },
-        { date: '', time: '03:00 PM', description: 'Activitate 4' },
-        { date: '', time: '05:00 PM', description: 'Activitate 5' },
+        { date: 'Day 1', time: '09:00', description: 'Welcome' },
+        { date: '', time: '10:00', description: 'Presentation' },
+        { date: '', time: '11:30', description: 'Brainstorming' },
+        { date: '', time: '12:00', description: 'CODING' },
+        { date: '', time: '14:00', description: 'Lunch' },
+        { date: '', time: '16:00', description: 'Mentoring' },
+        { date: '', time: '19:00', description: 'Private Mentoring' },
+        { date: '', time: '21:00', description: 'Dinner' },
+        { date: '', time: '00:00', description: 'Activities' },
+        { date: 'Day 2', time: '08:00', description: 'Energizer' },
+        { date: '', time: '09:00', description: 'Breakfast' },
+        { date: '', time: '11:00', description: 'Mentoring' },
+        { date: '', time: '14:00', description: 'STOP CODE' },
+        { date: '', time: '14:00', description: 'Lunch Break' },
+        { date: '', time: '15:00', description: 'Demo' },
+        { date: '', time: '15:30', description: 'Presentations' },
+        { date: '', time: '17:30', description: 'Awards' },
       ],
       guests: [
         { name: 'giuco', role: 'juriu' },
