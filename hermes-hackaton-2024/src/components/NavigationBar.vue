@@ -32,11 +32,14 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { useGradient } from '@/composables/useGradient'
+import { getGradient } from '@/composables/useGradient'
 import { useScrollTo } from '@/composables/useScrollTo'
+import { ref } from 'vue'
 
-useGradient()
 const { scrollTo } = useScrollTo('/', '#sponsors')
+const page_gradient = getGradient()
+
+const visible = ref(true)
 </script>
 
 <style scoped>
@@ -44,10 +47,7 @@ const { scrollTo } = useScrollTo('/', '#sponsors')
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  background: var(--navbar-gradient);
-  /* position: sticky;
-  top: 0;
-  z-index: 1000; */
+  background: v-bind('page_gradient');
 }
 
 .toggle {

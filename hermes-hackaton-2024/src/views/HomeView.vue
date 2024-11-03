@@ -20,10 +20,12 @@
       </ul>
     </section>
   </div>
+  <!-- <SponsorList /> -->
 </template>
 
 <script setup>
-import HackathonTitle from '../components/HackathonTitle.vue'
+import HackathonTitle from '../components/HackathonTitle.vue';
+import SponsorList from '../components/SponsorList.vue';
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@
     <p class="title_text">ARCADE GUARDIANS:</p>
     <p class="title_text">RETRO GAMES MEET CYBERSECURITY</p>
     <div class="sponsor-info">
-      <span class="sponsor-text">Sponsored by:</span>
+      <span class="sponsor-text">Powered by:</span>
       <a target="_blank" href="https://www.cloudflight.io/"
         ><img
           src="../assets/imgs/cloudflight_logo_blue.png"
@@ -16,22 +16,11 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
+import { useGradient } from '@/composables/useGradient'
+import { useBackground } from '@/composables/useBackground'
 
-const route = useRoute()
-const color_set = {
-  '/about': ['#6c86e7', '#cf29c7', '#62a1ef'],
-  '/register': ['#6822E5', '#62A1F0', '#31AF34'],
-  '/': ['#6822E5', '#62A1F0', '#CF29C7'],
-}
-const image_set = {
-  '/about': '/imgs/background_purple.jpg',
-  '/register': '/imgs/background_green.jpg',
-  '/': '/imgs/background.jpg',
-}
-
-const backgroundColor = `linear-gradient(to bottom, ${color_set[route.path][0]} 0%, ${color_set[route.path][1]} 40%, ${color_set[route.path][2]} 100%)`
-const backgroundImage = `url(${image_set[route.path]})`
+const backgroundColor = useGradient()
+const backgroundImage = useBackground()
 </script>
 
 <style scoped>
