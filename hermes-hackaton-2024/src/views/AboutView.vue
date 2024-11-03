@@ -1,7 +1,7 @@
 <template>
   <HackathonTitle />
   <div class="timeline-container">
-    <h2 class="about-section-header">Timeline</h2>
+    <h2 class="about-section-header">Timeline (16-17 November)</h2>
     <div class="timeline">
       <div v-for="day in timeline" :key="day.day">
         <div class="day">{{ day.day }}</div>

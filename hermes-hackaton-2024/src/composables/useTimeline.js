@@ -1,8 +1,8 @@
 export default function () {
   const timelineArr = [
     {
-      day: 'Day 1',
-      date: '2024-11-04',
+      day: 'Saturday',
+      date: '2024-11-16',
       timeline: [
         { time: '09:00', description: 'Welcome' },
         { time: '10:00', description: 'Presentation' },
@@ -13,12 +13,11 @@ export default function () {
         { time: '19:00', description: 'Private Mentoring' },
         { time: '21:00', description: 'Dinner' },
         { time: '00:00', description: 'Activities' },
-        { time: '00:30', description: 'Altceva tatica' },
       ],
     },
     {
-      day: 'Day 2',
-      date: '2024-11-05',
+      day: 'Sunday',
+      date: '2024-11-17',
       timeline: [
         { time: '08:00', description: 'Energizer' },
         { time: '09:00', description: 'Breakfast' },
