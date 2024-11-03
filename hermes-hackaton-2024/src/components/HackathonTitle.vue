@@ -16,11 +16,11 @@
 </template>
 
 <script setup>
-import { useGradient } from '@/composables/useGradient'
-import { useBackground } from '@/composables/useBackground'
+import { getGradient } from '@/composables/useGradient'
+import { getBackground } from '@/composables/useBackground'
 
-const backgroundColor = useGradient()
-const backgroundImage = useBackground()
+const backgroundColor = getGradient()
+const backgroundImage = getBackground()
 </script>
 
 <style scoped>
