@@ -8,18 +8,10 @@
       />
     </div>
     <div class="navbar-btns-cont">
-      <div class="nav-link-container">
         <RouterLink class="nav-link" to="/about">About</RouterLink>
-      </div>
-      <div class="nav-link-container">
         <RouterLink class="nav-link" to="/register">Register</RouterLink>
-      </div>
-      <div class="nav-link-container">
         <a href="#sponsors" class="nav-link">Sponsors</a>
-      </div>
-      <div class="nav-link-container">
         <a href="#contact" class="nav-link">Contact</a>
-      </div>
     </div>
   </nav>
 </template>
@@ -59,29 +51,38 @@ nav {
   text-align: center;
 }
 
-.nav-link {
+/* .nav-link {
   color: black;
   font-weight: bold;
   font-size: medium;
   align-self: center;
-}
+} */
 
-.nav-link-container {
+.nav-link {
   margin-left: 1rem;
   margin-right: 1rem;
   width: 130px;
-  height: 70px;
+  height: 60px;
+  padding-top: 10px;
   justify-content: center;
   background: url('../assets/imgs/nav-unpressed.svg') no-repeat;
   background-size: contain;
+  background-position: bottom;
 }
 
-.nav-link-container:hover {
+.nav-link:hover {
   background: url('../assets/imgs/nav-pressed.svg') center no-repeat;
   background-size: contain;
+  background-position: bottom;
+  padding-top: 20px;
+  height: 50px;
 }
-.nav-link-container:active {
+
+.nav-link:active {
   background: url('../assets/imgs/nav-pressed.svg') center no-repeat;
   background-size: contain;
+  background-position: bottom;
+  padding-top: 20px;
+  height: 50px;
 }
 </style>
