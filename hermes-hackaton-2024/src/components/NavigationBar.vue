@@ -11,8 +11,8 @@
     <div class="navbar-btns-cont" :class="{visible: visible}">
         <RouterLink class="nav-link" to="/about">About</RouterLink>
         <RouterLink class="nav-link" to="/register">Register</RouterLink>
-        <RouterLink class="nav-link" to="#sponsors">Sponsors</RouterLink>
-        <RouterLink class="nav-link" to="#contact">Contact</RouterLink>
+        <a class="nav-link" href="#sponsors">Sponsors</a>
+        <a class="nav-link" href="#contact">Contact</a>
     </div>
     <div @click="visible = !visible" class="toggle">
           <div v-if="visible">
