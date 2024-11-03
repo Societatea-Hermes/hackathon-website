@@ -1,16 +1,7 @@
+
 <template>
+  <HackathonTitle />
   <div class="custom-background">
-    <p class="centered-text-home gradient-text-blue">
-      ARCADE GUARDIANS:
-    </p>
-    <p class="centered-text-home gradient-text-blue">
-      RETRO GAMES MEET CYBERSECURITY
-    </p>
-    <div class="sponsor-info">
-      <p class="sponsor-text">Sponsored by:</p>
-      <img src="../assets/imgs/cloudflight_logo_blue.png" alt="Sponsor Logo" class="sponsor-logo">
-    </div>
-    <p class="subtext">Hacking the past to secure the future</p>
     <div>
       <p class="description-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -19,6 +10,9 @@
   </div>
 </template>
 
+<script setup>
+import HackathonTitle from '../components/HackathonTitle.vue';
+</script>
 
 <style scoped>
 body {
@@ -30,10 +24,10 @@ body {
 }
 
 .custom-background {
-  background-image: url('../assets/imgs/background.jpg');
-  background-size: 100% auto; /* Ensures width fits */
+  background-image: url('/imgs/background.jpg'); 
+  background-size: 100% 100%; /* Ensures width fits */
   background-repeat: repeat-y; /* Repeat vertically */
-  background-position: center top; /* Align at the top */
+  background-position: top; /* Align at the top */
   flex-grow: 1; /* Allow it to grow and fill space */
   display: flex; /* Enable flexbox for the background */
   flex-direction: column; /* Stack children vertically */

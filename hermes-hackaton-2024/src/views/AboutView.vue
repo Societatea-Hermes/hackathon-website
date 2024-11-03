@@ -1,21 +1,6 @@
 <template>
-  <h1>About</h1>
-  <GuestArcade />
+  <HackathonTitle />
   <div>
-    <div>
-      <p class="centered-text-register gradient-text-purple">
-        ARCADE GUARDIANS:
-      </p>
-    </div>
-    <div>
-      <p class="centered-text-register gradient-text-purple">
-        RETRO GAMES MEET CYBERSECURITY
-      </p>
-    </div>
-    <p class="subtext gradient-text-purple">
-      Hacking the past to secure the future
-    </p>
-
     <h2>Timeline</h2>
     <div class="timeline">
       <div
@@ -28,10 +13,15 @@
         <div class="activity">{{ event.description }}</div>
       </div>
     </div>
-
     <h2>Guests</h2>
+    <GuestArcade />
   </div>
 </template>
+
+<script setup>
+import GuestArcade from '../components/GuestArcade.vue';
+import HackathonTitle from '../components/HackathonTitle.vue';
+</script>
 
 <script>
 export default {
@@ -104,7 +94,7 @@ h2 {
 
 .gradient-text-purple {
   background: linear-gradient(to bottom, #6c86e7 0%, #cf29c7 20%, #62a1ef 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 

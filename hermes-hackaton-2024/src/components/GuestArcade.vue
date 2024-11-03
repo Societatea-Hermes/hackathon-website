@@ -12,7 +12,6 @@
 import useGuests from '../composables/useGuests'
 import { ref } from 'vue'
 const { guests } = useGuests()
-console.log(guests)
 const guest_index = ref(1)
 
 </script>

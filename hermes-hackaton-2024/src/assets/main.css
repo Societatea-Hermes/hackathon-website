@@ -14,7 +14,7 @@
 }
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom right,
     var(--magenta),
     var(--purple),
@@ -22,7 +22,7 @@ body {
     var(--mid-blue),
     var(--light-blue),
     var(--green)
-  );
-  background: url('../assets/imgs/background.jpg') no-repeat center fixed;
+  ); */
+  background-color: #110334;
   margin: 0;
 }

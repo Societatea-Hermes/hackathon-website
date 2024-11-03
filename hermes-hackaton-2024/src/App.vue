@@ -17,5 +17,3 @@ const { sponsors } = useSponsors()
 const { guests } = useGuests()
 console.log(sponsors, guests)
 </script>
-
-<style scoped></style>
