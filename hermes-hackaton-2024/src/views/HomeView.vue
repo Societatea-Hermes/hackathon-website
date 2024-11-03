@@ -28,11 +28,11 @@ import HackathonTitle from '../components/HackathonTitle.vue'
 
 <style scoped>
 body {
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default body padding */
-  display: flex; /* Enable flexbox */
-  flex-direction: column; /* Stack children vertically */
-  height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .custom-background {
