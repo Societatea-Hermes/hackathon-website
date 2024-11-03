@@ -50,10 +50,31 @@ Strada Bogdan Petriceicu Hașdeu 45, Cluj-Napoca
 </template>
   
 <script setup>
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 
+const route = useRoute()
+const image_set = {
+  '/about': "/imgs/background_purple.jpg",
+  '/register': "/imgs/background_green.jpg",
+  '/': "/imgs/background.jpg"
+}
+
+const backgroundImage = ref(`url(${image_set['/']})`);
+
+watch(() => route.path, page => {
+    backgroundImage.value = `url(${image_set[page]})`;
+})
 </script>
   
 <style scoped>
+    footer {
+        background-image: v-bind('backgroundImage');
+        background-size: 100% 100%; /* Ensures width fits */
+        background-repeat: repeat-y; /* Repeat vertically */
+        background-position: top; /* Align at the top */
+    }
+
     #contact {
         display: grid;
         grid-template-columns: 25% 40% 25%;
@@ -90,10 +111,10 @@ Strada Bogdan Petriceicu Hașdeu 45, Cluj-Napoca
     .copyright {
         text-align: center;
         color: white;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
     }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 700px) {
         #contact {
             grid-template-columns: 90%;
         }
