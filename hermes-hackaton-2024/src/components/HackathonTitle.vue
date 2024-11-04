@@ -3,7 +3,7 @@
     <p class="title_text">ARCADE GUARDIANS:</p>
     <p class="title_text">RETRO GAMES MEET CYBERSECURITY</p>
     <div class="sponsor-info">
-      <span class="sponsor-text">Powered by:</span>
+      <span class="powered-by-text">Powered by:</span>
       <a target="_blank" href="https://www.cloudflight.io/"
         ><img
           src="../assets/imgs/cloudflight_logo_blue.png"
@@ -57,7 +57,7 @@ const backgroundImage = getBackground()
   margin-right: 10%;
 }
 
-.sponsor-text {
+.powered-by-text {
   font-size: 1.3rem;
   background: v-bind('backgroundColor');
   background-clip: text;
@@ -79,7 +79,7 @@ const backgroundImage = getBackground()
     font-size: 0.8rem;
     margin-top: 50px;
   }
-  .sponsor-text {
+  .powered-by-text {
     font-size: 0.9rem;
   }
   .sponsor-logo {
