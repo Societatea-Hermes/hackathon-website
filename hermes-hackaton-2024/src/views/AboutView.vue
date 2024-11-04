@@ -64,38 +64,10 @@ const isCurrentActivity = (date, event, nextEvent) => {
   box-sizing: border-box;
 }
 
-.motto {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: #62a1f0;
-  margin-bottom: 1rem;
-  text-align: right;
-}
-
 .about-section-header {
   font-size: 1.5em;
   color: var(--light-blue);
   text-align: left;
-}
-
-.centered-text-register {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: white;
-  text-align: center;
-}
-
-.gradient-text-purple {
-  background: linear-gradient(to bottom, #6c86e7 0%, #cf29c7 20%, #62a1ef 100%);
-  background-clip: text;
-  color: transparent;
-}
-
-.subtext {
-  font-size: 1.5rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 .timeline {
@@ -117,7 +89,7 @@ const isCurrentActivity = (date, event, nextEvent) => {
   text-align: center;
   font-size: 2rem;
   background: linear-gradient(to bottom, #6822e5 0%, #62a1f0 60%, #cf29c7 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin-bottom: 1rem;
 }
