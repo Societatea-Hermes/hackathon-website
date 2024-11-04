@@ -14,11 +14,11 @@
     </div>
   </div>
   <section id="#sponsors">
-      <SponsorList columns="1" :sponsors="powered_by"></SponsorList>
-      <SponsorList columns="2" :sponsors="gold"></SponsorList>
-      <SponsorList columns="3" :sponsors="silver"></SponsorList>
-      <SponsorList columns="3" :sponsors="bronze"></SponsorList>
-      <SponsorList columns="3" :sponsors="normal"></SponsorList>
+      <SponsorList :sponsors="powered_by"></SponsorList>
+      <SponsorList :sponsors="gold.concat(silver).concat(powered_by)"></SponsorList>
+      <SponsorList :sponsors="silver"></SponsorList>
+      <SponsorList :sponsors="bronze"></SponsorList>
+      <SponsorList :sponsors="normal"></SponsorList>
     </section>
 
 </template>

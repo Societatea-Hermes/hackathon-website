@@ -35,9 +35,19 @@ export default function () {
 
   ]
 
+   const powered_by = sponsors.filter(sponsor => sponsor.tier === 'powered_by')
+   const gold = sponsors.filter(sponsor => sponsor.tier === 'gold')
+   const silver = sponsors.filter(sponsor => sponsor.tier === 'silver')
+   const bronze = sponsors.filter(sponsor => sponsor.tier === 'bronze')
+   const normal = sponsors.filter(sponsor => sponsor.tier === 'normal')
+
   // const sponsors = await axios.get('https://apis.societatea-hermes.ro/v1/sponsors')
 
   return {
-    sponsors,
+    powered_by,
+    gold,
+    silver,
+    bronze,
+    normal
   }
 }

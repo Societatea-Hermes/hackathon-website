@@ -1,30 +1,48 @@
 <template>
-    <div id="sponsors">
-        <ul>
-            <li v-for="sponsor in sponsors" :key="sponsor.id">
+    <div class="sponsor-list">
+        <div class="sponsor" v-for="sponsor in props.sponsors" :key="sponsor.id" >
+            <a :href="sponsor.websiteUrl" target="_blank">
                 <img :src="sponsor.logo" :alt="sponsor.name">
-            </li>
-        </ul>
+            </a>
+        </div>
     </div>
 </template>
 
 <script setup>
-import useSponsors from '../composables/useSponsors'
-
-const { sponsors } = useSponsors()
-
+const props = defineProps({
+    sponsors: {
+        type: Array,
+    }
+})
 
 
 </script>
 
 <style scoped>
+
     img {
         width: auto;
         height: 100px;
+        max-width: 300px;
+        object-fit: contain;
     }
 
-    #sponsors {
-        background-image: v-bind('backgroundImage');
-        background-size: 100% 100%; 
+    .sponsor-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin-left: 5%;
+        margin-right: 5%;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 3px 3px 3px 10px rgba(0, 0, 0, 0.7);
+        margin-block: 50px;
     }
+
+    .sponsor {
+        margin: 0;
+        padding: 20px;
+    }
+
 </style>
