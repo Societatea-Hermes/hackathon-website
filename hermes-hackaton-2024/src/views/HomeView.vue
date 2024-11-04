@@ -13,28 +13,56 @@
       </p>
     </div>
   </div>
-  <section id="#sponsors">
-      <SponsorList :sponsors="powered_by"></SponsorList>
-      <SponsorList :sponsors="gold.concat(silver).concat(powered_by)"></SponsorList>
-      <SponsorList :sponsors="silver"></SponsorList>
-      <SponsorList :sponsors="bronze"></SponsorList>
-      <SponsorList :sponsors="normal"></SponsorList>
-    </section>
+  <section id="sponsors">
+    <h2 id="sponsor_title">Our Sponsors</h2>
+    <div id="sponsor_lists">
+      <SponsorList shadow="var(--sponsor-shadow-powered_by)" :sponsors="powered_by"></SponsorList>
+      <SponsorList shadow="var(--sponsor-shadow-gold)" :sponsors="gold"></SponsorList>
+      <SponsorList shadow="var(--sponsor-shadow-silver)" :sponsors="silver"></SponsorList>
+      <SponsorList shadow="var(--sponsor-shadow-bronze)" :sponsors="bronze"></SponsorList>
+      <SponsorList :sponsors="normal.concat(gold, silver, bronze, powered_by, normal, gold, silver, bronze)"></SponsorList>
+  </div>
+  </section>
 
 </template>
 
 <script setup>
 import HackathonTitle from '../components/HackathonTitle.vue';
+import { getBackground } from '@/composables/useBackground';
+import { getGradient } from '@/composables/useGradient';
 import SponsorList from '../components/SponsorList.vue';
 import useSponsors  from '@/composables/useSponsors';
 
+const backgroundImage = getBackground();
+const backgroundColor = getGradient();
 const { powered_by, gold, silver, bronze, normal } = useSponsors();
 
 </script>
 
 <style scoped>
+#sponsor_title {
+  font-size: 2rem;
+  background: v-bind('backgroundColor');
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-block: 10px;
+  width: 100%;
+}
+
+#sponsor_lists {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-inline: 5%;
+  padding-block: 50px;
+  background-image: v-bind('backgroundImage');
+  background-size: 100% 100%;
+}
+
+
 .custom-background {
-  background-image: url('/imgs/background.jpg');
+  background-image: v-bind('backgroundImage');
   background-size: 100% 100%;
   flex-grow: 1;
   display: flex;

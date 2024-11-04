@@ -28,6 +28,18 @@
     var(--light-blue),
     var(--green)
   );
+  --sponsor-shadow-default: 3px 3px 3px 5px rgba(0, 0, 0, 0.7);
+  --sponsor-shadow-powered_by: 
+    3px 3px 10px 5px rgba(207, 41, 199, 0.7), 
+    -3px -3px 10px 5px rgba(104, 34, 229, 0.7), 
+    4px 4px 10px 10px rgba(98, 161, 240, 0.7);
+  --sponsor-shadow-gold: 
+    3px 3px 10px 5px rgba(255, 215, 0, 0.7);
+  --sponsor-shadow-silver: 
+    3px 3px 10px 5px rgba(192, 192, 192, 0.7);
+  --sponsor-shadow-bronze:
+    3px 3px 10px 5px rgba(205, 127, 50, 0.7);
+  
   font-family: 'joystix', sans-serif;
 }
 

@@ -31,6 +31,12 @@ export default function () {
       logo: '/imgs/sponsors/arobs.png',
       websiteUrl: 'https://www.arobs.com/',
       tier: 'bronze',
+    },
+    {
+      name: "UBB",
+      logo: '/imgs/sponsors/ubb.svg',
+      websiteUrl: 'https://www.ubbcluj.ro/en/',
+      tier: 'normal',
     }
 
   ]
