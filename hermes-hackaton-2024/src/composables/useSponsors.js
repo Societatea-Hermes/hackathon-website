@@ -37,6 +37,12 @@ export default function () {
       logo: '/imgs/sponsors/ubb.svg',
       websiteUrl: 'https://www.ubbcluj.ro/en/',
       tier: 'normal',
+    },
+    {
+      name: "UBB FMI",
+      logo: '/imgs/sponsors/fmi.png',
+      websiteUrl: 'https://www.cs.ubbcluj.ro/',
+      tier: 'normal',
     }
 
   ]

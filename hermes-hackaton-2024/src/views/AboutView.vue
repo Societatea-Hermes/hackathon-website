@@ -1,9 +1,9 @@
 <template>
   <HackathonTitle />
   <HackathonTimeline />
-  <div class="guests-container">
+  <!-- <div class="guests-container">
     <h2 class="about-section-header">Guests</h2>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
