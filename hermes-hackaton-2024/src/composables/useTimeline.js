@@ -23,7 +23,6 @@ export default function () {
         { time: '09:00', description: 'Breakfast' },
         { time: '11:00', description: 'Mentoring' },
         { time: '14:00', description: 'STOP CODE' },
-        { time: '14:00', description: 'Lunch Break' },
         { time: '15:00', description: 'Demo' },
         { time: '15:30', description: 'Presentations' },
         { time: '17:30', description: 'Awards' },
