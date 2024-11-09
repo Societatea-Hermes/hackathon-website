@@ -80,4 +80,11 @@ const { started, daysLeft, hoursLeft, minutesLeft, secondsLeft } =
   text-align: center;
   margin-block: 50px;
 }
+
+@media screen and (max-width: 600px) {
+  .map {
+    width: 80%;
+    height: 150px;
+  }
+}
 </style>
